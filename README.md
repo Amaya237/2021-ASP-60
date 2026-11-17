@@ -267,9 +267,22 @@ The project demonstrated the practical application of bioinformatics techniques 
 
 Future work could include analysing a larger and more geographically diverse collection of genomes, investigating specific mutation positions, and applying additional phylogenetic methods to assess evolutionary relationships in greater detail.
 
+# 8. Reproducibility
 
+The analysis was performed using R and the RStudio environment.
 
-# 8. References
+To reproduce the analysis:
+
+1. Clone or download this GitHub repository.
+2. Open `2021-ASP-60.Rproj` in RStudio.
+3. Install the required packages: Biostrings, DECIPHER, ape, and ggplot2.
+4. Run the R scripts in the `code/` folder in numerical order, starting with `01_data_check.R`.
+5. The generated figures and results are saved in their respective project folders.
+6. Open `report/viral_sequence_analysis.Rmd` in RStudio and knit it to HTML to regenerate the report.
+
+The raw genome sequences and metadata used in the analysis are provided in the `data/raw/` folder.
+
+# 9. References
 
 1. Wu, F. et al. (2020). A new coronavirus associated with human respiratory disease in China. *Nature*, 579, 265–269. https://doi.org/10.1038/s41586-020-2008-3
 
