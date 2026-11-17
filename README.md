@@ -1,3 +1,7 @@
+# Viral Sequence Analysis and Phylogenetics of SARS-CoV-2 Genomes
+
+Abstract:
+This project investigates genetic variation and phylogenetic relationships among 22 publicly available SARS-CoV-2 genomes representing Alpha, Delta, Omicron BA.1, and Omicron BA.2 lineages. Using the Wuhan-Hu-1 reference genome (NC_045512.2), sequence quality was assessed, and multiple sequence alignment was performed. Mutations and pairwise genetic distances were analysed, followed by the construction of a Neighbor-Joining phylogenetic tree. Among the selected samples, BA.1 showed the lowest average within-lineage genetic distance, while Delta showed the highest. The study demonstrates a reproducible bioinformatics workflow while acknowledging limitations related to sample size and sequence quality.
 
 # 1. Introduction
 
@@ -218,34 +222,6 @@ The tree below uses different colours to represent the known lineage classificat
 The following bar chart compares the average within-lineage genetic distances for Alpha, Delta, BA.1, and BA.2.
 
 ![Average genetic distance within each selected SARS-CoV-2 lineage.](Figures/lineage_genetic_distance.png)
-
-# 4. Data Visualizations
-
-## 4.1 Mutation Comparison
-
-The following figure compares the number of substitutions, insertions, and deletions identified in each selected genome relative to the Wuhan-Hu-1 reference.
-
-![Comparison of nucleotide differences across selected SARS-CoV-2 genomes.](Figures/mutation_comparison.png)
-
-## 4.2 Phylogenetic Tree
-
-The following Neighbor-Joining tree illustrates the genetic relationships among the 22 selected genomes and the Wuhan-Hu-1 reference genome.
-
-![Neighbor-Joining phylogenetic tree of selected SARS-CoV-2 genomes.](Figures/phylogenetic_tree.png)
-
-## 4.3 Phylogenetic Tree by Lineage
-
-The tree below uses different colours to represent the known lineage classifications of the selected genomes. The reference genome is displayed separately.
-
-![Phylogenetic tree annotated by SARS-CoV-2 lineage.](Figures/lineage_phylogenetic_tree.png)
-
-## 4.4 Genetic Distance Comparison
-
-The following bar chart compares the average within-lineage genetic distances for Alpha, Delta, BA.1, and BA.2.
-
-![Average genetic distance within each selected SARS-CoV-2 lineage.](Figures/lineage_genetic_distance.png)
-
-
 
 # 5. Discussion
 
