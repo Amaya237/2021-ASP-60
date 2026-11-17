@@ -120,3 +120,13 @@ ggsave(
   width = 12,
   height = 7
 )
+gap_summary <- data.frame(
+  Accession = rownames(sequence_matrix),
+  Total_Gaps = rowSums(sequence_matrix == "-"),
+  First_100_Gaps = rowSums(sequence_matrix[, 1:100] == "-"),
+  Last_100_Gaps = rowSums(
+    sequence_matrix[, (ncol(sequence_matrix)-99):ncol(sequence_matrix)] == "-"
+  )
+)
+
+print(gap_summary)
