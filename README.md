@@ -1,6 +1,6 @@
 # Viral Sequence Analysis and Phylogenetics of SARS-CoV-2 Genomes
 
-Abstract:
+## Abstract:
 This project investigates genetic variation and phylogenetic relationships among 22 publicly available SARS-CoV-2 genomes representing Alpha, Delta, Omicron BA.1, and Omicron BA.2 lineages. Using the Wuhan-Hu-1 reference genome (NC_045512.2), sequence quality was assessed, and multiple sequence alignment was performed. Mutations and pairwise genetic distances were analysed, followed by the construction of a Neighbor-Joining phylogenetic tree. Among the selected samples, BA.1 showed the lowest average within-lineage genetic distance, while Delta showed the highest. The study demonstrates a reproducible bioinformatics workflow while acknowledging limitations related to sample size and sequence quality.
 
 # 1. Introduction
