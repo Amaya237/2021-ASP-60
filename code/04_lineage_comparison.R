@@ -58,3 +58,78 @@ legend(
 )
 
 dev.off()
+
+
+# Calculate pairwise genetic distances
+aligned_sequences <- Biostrings::readDNAStringSet(
+  "results/aligned_genomes.fasta"
+)
+
+sequence_matrix <- do.call(
+  rbind,
+  strsplit(as.character(aligned_sequences), split = "")
+)
+
+rownames(sequence_matrix) <- names(aligned_sequences)
+
+dna_data <- ape::as.DNAbin(sequence_matrix)
+
+distance_matrix <- ape::dist.dna(
+  dna_data,
+  model = "raw",
+  pairwise.deletion = TRUE
+)
+
+# Calculate average within-lineage distances
+distance_values <- as.matrix(distance_matrix)
+
+lineage_results <- data.frame()
+
+for (group in unique(metadata$Pangolin)) {
+  
+  accessions <- metadata$Accession[
+    metadata$Pangolin == group
+  ]
+  
+  group_distances <- distance_values[
+    accessions,
+    accessions,
+    drop = FALSE
+  ]
+  
+  average_distance <- mean(
+    group_distances[upper.tri(group_distances)]
+  )
+  
+  lineage_results <- rbind(
+    lineage_results,
+    data.frame(
+      Lineage = group,
+      Average_Genetic_Distance = average_distance
+    )
+  )
+}
+
+print(lineage_results)
+
+write.csv(
+  lineage_results,
+  "results/lineage_distance_summary.csv",
+  row.names = FALSE
+)
+
+
+# Interpretation:
+# BA.1 showed the lowest average within-lineage
+# genetic distance (0.000266).
+#
+# BA.2 also showed relatively low genetic variation.
+#
+# Alpha showed a higher average distance than
+# both Omicron groups.
+#
+# Delta showed the highest average within-lineage
+# genetic distance (0.001163).
+#
+# These findings apply only to the selected samples.
+
